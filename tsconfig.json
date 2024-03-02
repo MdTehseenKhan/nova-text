@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "lib": ["ES5", "ES2015", "ES2016", "DOM", "ESNext"],
+    "types": ["node"],
+    "module": "ES2015",
+    "moduleResolution": "Node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist/esm",
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2020",
+    // "typeRoots": ["./dist/index.d.ts"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

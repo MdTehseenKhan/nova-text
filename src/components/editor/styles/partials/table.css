@@ -1,0 +1,120 @@
+.ProseMirror {
+  .tableWrapper {
+    @apply my-12;
+  }
+
+  table {
+    @apply border-collapse border-foreground/20 rounded box-border w-full;
+
+    td,
+    th {
+      @apply border border-foreground/20 min-w-24 p-2 relative text-left align-top;
+
+      &:first-of-type:not(a) {
+        @apply mt-0;
+      }
+
+      p {
+        @apply m-0;
+
+        & + p {
+          @apply mt-3;
+        }
+      }
+    }
+
+    th {
+      @apply font-bold;
+    }
+
+    .column-resize-handle {
+      @apply -bottom-0.5 flex pointer-events-none absolute -right-1 top-0 w-2;
+
+      &::before {
+        @apply bg-foreground/20 h-full w-px ml-2;
+        content: "";
+      }
+    }
+
+    .selectedCell {
+      @apply bg-foreground/10 border-foreground/20 border-double;
+    }
+
+    .grip-column,
+    .grip-row {
+      @apply items-center bg-foreground/10 cursor-pointer flex justify-center absolute z-10;
+    }
+
+    .grip-column {
+      @apply w-[calc(100%+1px)] border-l border-foreground/20 h-3 left-0 -ml-px -top-3;
+
+      &:hover,
+      &.selected {
+        &::before {
+          content: "";
+          @apply w-2.5;
+        }
+      }
+
+      &:hover {
+        @apply bg-foreground/20;
+
+        &::before {
+          @apply border-b-2 border-dotted border-foreground/60;
+        }
+      }
+
+      &.first {
+        @apply border-transparent rounded-tl-sm;
+      }
+
+      &.last {
+        @apply rounded-tr-sm;
+      }
+
+      &.selected {
+        @apply bg-foreground/30 border-foreground/30 shadow-sm;
+
+        &::before {
+          @apply border-b-2 border-dotted;
+        }
+      }
+    }
+
+    .grip-row {
+      @apply h-[calc(100%+1px)] border-t border-foreground/20 -left-3 w-3 top-0 -mt-px;
+
+      &:hover,
+      &.selected {
+        &::before {
+          @apply h-2.5;
+          content: "";
+        }
+      }
+      &:hover {
+        @apply bg-foreground/10;
+        @apply dark:bg-white/20;
+
+        &::before {
+          @apply border-l-2 border-dotted border-foreground/60;
+        }
+      }
+
+      &.first {
+        @apply border-transparent rounded-tl-sm;
+      }
+
+      &.last {
+        @apply rounded-bl-sm;
+      }
+
+      &.selected {
+        @apply bg-foreground/30 border-foreground/30 shadow-sm;
+
+        &::before {
+          @apply border-l-2 border-dotted;
+        }
+      }
+    }
+  }
+}

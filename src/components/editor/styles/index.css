@@ -1,0 +1,35 @@
+@import './partials/lists.css';
+@import './partials/placeholder.css';
+@import './partials/table.css';
+@import './partials/typography.css';
+
+.ProseMirror {
+  .selection {
+    @apply inline;
+  }
+
+  .selection,
+  *::selection {
+    @apply bg-foreground/10 dark:bg-foreground/20;
+  }
+
+  & > .react-renderer {
+    @apply my-12 first:mt-0 last:mb-0;
+  }
+
+  &.resize-cursor {
+    @apply cursor-col-resize;
+  }
+
+  .ProseMirror-gapcursor {
+    @apply relative w-full max-w-2xl mx-auto;
+
+    &:after {
+      @apply border-t-border/40 w-full -top-[1.5em] max-w-2xl mx-auto left-0 right-0;
+    }
+  }
+}
+
+[data-theme='slash-command'] {
+  width: 1000vw;
+}

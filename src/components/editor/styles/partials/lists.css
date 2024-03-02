@@ -1,0 +1,46 @@
+.ProseMirror {
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ul,
+  ol {
+    @apply py-0 px-4 my-6 first:mt-0 last:mb-0;
+
+    ul,
+    ol,
+    li {
+      @apply my-1;
+    }
+
+    p {
+      @apply mt-0 mb-1;
+    }
+  }
+
+  & > ul,
+  & > ol {
+    @apply my-8 first:mt-0 last:mb-0;
+  }
+
+  ul[data-type='taskList'] li {
+    @apply flex items-center;
+
+    &[data-checked='true'] {
+      @apply line-through decoration-2;
+    }
+
+    > label > input[type='checkbox'] {
+      @apply appearance-none bg-background mt-0 mr-2 cursor-pointer w-5 h-5 relative border-2 border-accent rounded-sm grid place-content-center hover:bg-accent/50 active:bg-accent checked:before:scale-100;
+
+      &::before {
+        @apply content-[""] w-2.5 h-2.5 transition-transform duration-150 ease-in-out shadow-[inset_1em_1em] scale-0;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "name": "nova-text",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A simple editor but a value add feature to your next product. Stay tuned there is more to come. It is a WYSIWYG editor.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./editor": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/ejs/index.js"
+    }
+  },
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MdTehseenKhan/nova-text.git"
+  },
+  "keywords": [
+    "editor",
+    "nova-text",
+    "textarea",
+    "react",
+    "nextjs"
+  ],
+  "author": "Muhammad Tehseen Khan <contact.tehseenkhan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MdTehseenKhan/nova-text/issues"
+  },
+  "homepage": "https://github.com/MdTehseenKhan/nova-text#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.56",
+    "@types/react-color": "^3.0.12",
+    "@types/react-dom": "^18.2.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-toggle": "^1.0.3",
+    "@tiptap/extension-character-count": "^2.2.3",
+    "@tiptap/extension-color": "^2.2.3",
+    "@tiptap/extension-focus": "^2.2.3",
+    "@tiptap/extension-font-family": "^2.2.3",
+    "@tiptap/extension-highlight": "^2.2.3",
+    "@tiptap/extension-horizontal-rule": "^2.2.3",
+    "@tiptap/extension-link": "^2.2.3",
+    "@tiptap/extension-placeholder": "^2.2.3",
+    "@tiptap/extension-subscript": "^2.2.3",
+    "@tiptap/extension-superscript": "^2.2.3",
+    "@tiptap/extension-table": "^2.2.3",
+    "@tiptap/extension-table-header": "^2.2.3",
+    "@tiptap/extension-table-row": "^2.2.3",
+    "@tiptap/extension-task-item": "^2.2.3",
+    "@tiptap/extension-task-list": "^2.2.3",
+    "@tiptap/extension-text-align": "^2.2.3",
+    "@tiptap/extension-text-style": "^2.2.3",
+    "@tiptap/extension-underline": "^2.2.3",
+    "@tiptap/pm": "^2.2.3",
+    "@tiptap/react": "^2.2.3",
+    "@tiptap/starter-kit": "^2.2.3",
+    "@tiptap/suggestion": "^2.2.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "cmdk": "^0.2.1",
+    "lucide-react": "^0.334.0",
+    "react-color": "^2.19.3",
+    "tailwind-merge": "^2.2.1"
+  }
+}

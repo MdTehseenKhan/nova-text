@@ -1,0 +1,49 @@
+.ProseMirror {
+  /* Placeholder Styles */
+  .is-empty::before {
+    @apply text-black/40 dark:text-white/40 float-left h-0 pointer-events-none w-full;
+  }
+
+  &.ProseMirror-focused {
+    /* Slashmenu Placeholder */
+    & > p.has-focus.is-empty::before {
+      content: "Press '/' for commands...";
+    }
+
+    & > h1.has-focus.is-empty::before {
+      content: 'Heading 1...';
+    }
+    & > h2.has-focus.is-empty::before {
+      content: 'Heading 2...';
+    }
+    & > h3.has-focus.is-empty::before {
+      content: 'Heading 3...';
+    }
+
+    &
+      > [data-type='columns']
+      > [data-type='column']
+      > p.is-empty.has-focus::before {
+      content: "Press '/' for commands...";
+    }
+  }
+
+  /* Default Placeholder */
+  & > .is-editor-empty::before {
+    content: attr(data-placeholder);
+  }
+
+  /* Blockquote Placeholder */
+  blockquote .is-empty:not(.is-editor-empty):first-child:last-child::before {
+    content: 'Enter a quote';
+  }
+
+  blockquote + figcaption.is-empty:not(.is-editor-empty)::before {
+    content: 'Author';
+  }
+
+  [data-placeholder][data-suggestion]::before,
+  [data-placeholder][data-suggestion] *::before {
+    content: none !important;
+  }
+}
