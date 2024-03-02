@@ -8,7 +8,7 @@ import { getEditorExtensions } from './extensions'
 import { TextMenu, LinkMenu } from './menus'
 import { cn } from '@/utils'
 
-import '@/components/editor/styles/index.css'
+import './styles/index.css'
 
 // export interface EditorProps extends TiptapEditorProps {
 export interface EditorProps {

@@ -4,7 +4,7 @@ import { useEditor, EditorContent as TiptapEditorContent } from '@tiptap/react'
 // import { type EditorProps } from '@tiptap/pm/view'
 
 import { getEditorExtensions } from './extensions'
-import '@/components/editor/styles/index.css'
+import './styles/index.css'
 
 // export interface EditorContentProps extends EditorProps {
 export interface EditorContentProps {
